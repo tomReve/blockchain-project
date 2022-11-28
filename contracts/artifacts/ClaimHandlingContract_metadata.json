@@ -1,0 +1,277 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "clientId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"name": "arePoliciesTheSame",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "samePolicy",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "clientId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"name": "assess",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "assesment",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getClaim",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "clientId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum InsurranceCompanyContract.insurancePolicy",
+								"name": "policyType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "assesment",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "claimDate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "damagePercentage",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct InsurranceCompanyContract.Claim",
+						"name": "claim",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getClient",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "enum InsurranceCompanyContract.insurancePolicy",
+								"name": "policyType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "validityDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct InsurranceCompanyContract.Client",
+						"name": "client",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "clientId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"name": "isPolicyValidOnClaimDate",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "policyValidity",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "clientId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum InsurranceCompanyContract.insurancePolicy",
+								"name": "policyType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "assesment",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "claimDate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "damagePercentage",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct InsurranceCompanyContract.Claim",
+						"name": "claim",
+						"type": "tuple"
+					}
+				],
+				"name": "newClaim",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ClaimHandling.sol": "ClaimHandlingContract"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ClaimHandling.sol": {
+			"keccak256": "0x8c66b3ede328c609558f7b9008117b175f4b911b803edffe6c5aff0dfa5598cf",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://f224dc1e244fd819c46e7761ca72cbe5d54608d4a69e8ae86edfc19d8155b265",
+				"dweb:/ipfs/QmdkWcTc5zbeiEuSU6DPWdwAfuQdDXRLGM4uZXZDZZypiC"
+			]
+		},
+		"contracts/Client.sol": {
+			"keccak256": "0x8f96e4fc692fa891c08986d2969fd4a6abf9b8dd59e65ba511842278bbbadaf1",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://83c717029c8f5f548a8afb60b9d79e2acc88a5b1b0c97ffc3e6310cda1991fa8",
+				"dweb:/ipfs/QmUrFD69jCMLmntuaqwKbGWCAphpV5GKyWCWNXC9kv2F8N"
+			]
+		},
+		"contracts/InsurranceCompany.sol": {
+			"keccak256": "0x7a9061eb6050c0a05455c06fe9e0ae86898122e83e2ae25ec81e024c58e75cd0",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://aa428465c7a88b5454ebd88c611738b5c3c26f7e898807958f69c5f36e2ef305",
+				"dweb:/ipfs/QmYe5se5c1krfdEzCYVSDy9mfXTseyTW82Y4GGrpRwjcBu"
+			]
+		}
+	},
+	"version": 1
+}

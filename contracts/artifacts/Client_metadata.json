@@ -1,0 +1,302 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "clientId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"name": "arePoliciesTheSame",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "samePolicy",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "clientId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"name": "assess",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "assesment",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getClaim",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "clientId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum Client.insurancePolicy",
+								"name": "policyType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "assesment",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "claimDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Client.Claim",
+						"name": "claim",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getClient",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "surname",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "lastname",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Client.insurancePolicy",
+								"name": "policyType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "validityDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Client.Client",
+						"name": "client",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "clientId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"name": "isPolicyValidOnClaimDate",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "policyValidity",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "clientId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum Client.insurancePolicy",
+								"name": "policyType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "assesment",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "claimDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Client.Claim",
+						"name": "claim",
+						"type": "tuple"
+					}
+				],
+				"name": "newClaim",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "surname",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "lastname",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Client.insurancePolicy",
+								"name": "policyType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "validityDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Client.Client",
+						"name": "client",
+						"type": "tuple"
+					}
+				],
+				"name": "newClient",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "clientId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Client.sol": "Client"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Client.sol": {
+			"keccak256": "0x68b5b62e737cddbce6b88dfd6203025c04347e0a85c591e291ec5ce9aaaf9afb",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a6f3fea35b36c05cc5c24c05da477197a4c66b4e0574c60004e828164618e96a",
+				"dweb:/ipfs/QmWh9xMRqutfezPHvUzHy3YcW232Amu9XPtjhoVhBQQ73f"
+			]
+		}
+	},
+	"version": 1
+}

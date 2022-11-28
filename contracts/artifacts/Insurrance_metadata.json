@@ -1,0 +1,302 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "clientId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"name": "arePoliciesTheSame",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "samePolicy",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "clientId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"name": "assess",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "assesment",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getClaim",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "clientId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum Insurrance.insurancePolicy",
+								"name": "policyType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "assesment",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "claimDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Insurrance.Claim",
+						"name": "claim",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getClient",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "surname",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "lastname",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Insurrance.insurancePolicy",
+								"name": "policyType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "validityDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Insurrance.Client",
+						"name": "client",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "clientId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"name": "isPolicyValidOnClaimDate",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "policyValidity",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "clientId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum Insurrance.insurancePolicy",
+								"name": "policyType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "assesment",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "claimDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Insurrance.Claim",
+						"name": "claim",
+						"type": "tuple"
+					}
+				],
+				"name": "newClaim",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "surname",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "lastname",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Insurrance.insurancePolicy",
+								"name": "policyType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "validityDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Insurrance.Client",
+						"name": "client",
+						"type": "tuple"
+					}
+				],
+				"name": "newClient",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "clientId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Client.sol": "Insurrance"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Client.sol": {
+			"keccak256": "0xa9265945528c2fbf0352dfcb840b07831162c4c560e12a1977792c337e21ee97",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://310054d41a23e17b658fe1fcca7f3541dd91d05e104bc57972a242482c70e047",
+				"dweb:/ipfs/Qma9ZyV1FY6dPzitixNFwKX18QCMvcZ8LQNgWeRDrRs4mW"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Insurrance.sol": "InsurranceContract"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Insurrance.sol": {
+			"keccak256": "0x654c2e8ceb517b96c99642d05d219df3d63978153afa853e9e6c8e49c2495337",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a2b0e10fc7be20f599d650036feb66c92a4f35795a31100c0947fc424997fd55",
+				"dweb:/ipfs/QmQcDCWrRwmXYFHu97FsiGpKUwMZWJdjMnkiEsVkHCharZ"
+			]
+		}
+	},
+	"version": 1
+}

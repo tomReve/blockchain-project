@@ -1,0 +1,140 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "repairId",
+						"type": "uint256"
+					}
+				],
+				"name": "achieveRepairRequest",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "damagePercentage",
+						"type": "uint256"
+					}
+				],
+				"name": "estimateCost",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "damage",
+						"type": "uint256"
+					}
+				],
+				"name": "receiveRepairRequest",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "repairId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "repairId",
+						"type": "uint256"
+					}
+				],
+				"name": "sendRepairReceipt",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Garage.sol": "GarageContract"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Garage.sol": {
+			"keccak256": "0x39922e2d01da48c429655bfbee37e0ebb115e73c4d50700c28b90f67c24e6351",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://6f1f62b0ccec0b6179a312a5a15a3494424233ef58ff7aa9780defdfb5a5b036",
+				"dweb:/ipfs/QmR66EjqA2Bm9CLWunJ98f9PmLYJUzuCQym7qmn8pPky36"
+			]
+		},
+		"contracts/InsurranceCompany.sol": {
+			"keccak256": "0x7a9061eb6050c0a05455c06fe9e0ae86898122e83e2ae25ec81e024c58e75cd0",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://aa428465c7a88b5454ebd88c611738b5c3c26f7e898807958f69c5f36e2ef305",
+				"dweb:/ipfs/QmYe5se5c1krfdEzCYVSDy9mfXTseyTW82Y4GGrpRwjcBu"
+			]
+		}
+	},
+	"version": 1
+}

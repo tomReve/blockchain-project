@@ -1,0 +1,61 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ClaimProcessing.sol": "ClaimPrecessingContract"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ClaimProcessing.sol": {
+			"keccak256": "0xb4d396fbf16aea0b9bb5f4352a36238d60997fcd80364274f4e72fc4f4d3fd0d",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://1dff2cd68b5d5a7820345b47085a4d4f7f42b2f225c870fba2718c5aa20f9b5b",
+				"dweb:/ipfs/QmfEm1LAm7Kc4dR1RqFgdnrz3koiXVjXXvWoUZkTGCBLdT"
+			]
+		},
+		"contracts/Client.sol": {
+			"keccak256": "0x8f96e4fc692fa891c08986d2969fd4a6abf9b8dd59e65ba511842278bbbadaf1",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://83c717029c8f5f548a8afb60b9d79e2acc88a5b1b0c97ffc3e6310cda1991fa8",
+				"dweb:/ipfs/QmUrFD69jCMLmntuaqwKbGWCAphpV5GKyWCWNXC9kv2F8N"
+			]
+		},
+		"contracts/InsurranceCompany.sol": {
+			"keccak256": "0x7a9061eb6050c0a05455c06fe9e0ae86898122e83e2ae25ec81e024c58e75cd0",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://aa428465c7a88b5454ebd88c611738b5c3c26f7e898807958f69c5f36e2ef305",
+				"dweb:/ipfs/QmYe5se5c1krfdEzCYVSDy9mfXTseyTW82Y4GGrpRwjcBu"
+			]
+		}
+	},
+	"version": 1
+}
