@@ -1,42 +1,48 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.4;
 import "./InsurranceCompany.sol";
-import "./Client.sol";
+import "./Customer.sol";
 
 contract ClaimHandlingContract is InsurranceCompanyContract {
 
-    ClientContract clientContract = new ClientContract();
+    CustomerContract customerContract = new CustomerContract();
 
-    uint numClaim;
+    uint numClaim = 0;
     mapping (uint => Claim) claims;
 
-    function newClaim(Claim memory claim) public returns (uint claimId) {
-        claimId = numClaim++; 
-        Claim storage c = claims[claimId];
-        c.id = claimId;
-        c.clientId = claim.clientId;
+    function newClaim(Claim memory claim) public {
+        Claim storage c = claims[numClaim];
+        c.id = numClaim;
+        c.customerId = claim.customerId;
         c.policyType = claim.policyType;
-        c.assesment = claim.assesment;
-        c.claimDate = block.timestamp;
+        c.claimDate = claim.claimDate;
+        numClaim++; 
     }
 
     function getClaim(uint id) public view returns (Claim memory claim){
         claim = claims[id];
     }
 
-    function getClient(uint id) public view returns (Client memory client){
-        client = clientContract.getClient(id);
+    function getClient(uint id) public view returns (Customer memory customer){
+        customer = customerContract.getCustomer(id);
     }
 
-    function isPolicyValidOnClaimDate(uint clientId, uint claimId) public view returns (bool policyValidity){
-        policyValidity = clientContract.getClient(clientId).validityDate > getClaim(claimId).claimDate;
+    function isPolicyValidOnClaimDate(uint customerId, uint claimId) public view returns (bool policyValidity){
+        policyValidity = customerContract.getCustomer(customerId).validityDate > getClaim(claimId).claimDate;
     }
 
-    function arePoliciesTheSame(uint clientId, uint claimId) public view returns (bool samePolicy){
-        samePolicy = clientContract.getClient(clientId).policyType == getClaim(claimId).policyType;
+    function arePoliciesTheSame(uint customerId, uint claimId) public view returns (bool samePolicy){
+        samePolicy = customerContract.getCustomer(customerId).policyType == getClaim(claimId).policyType;
     }
 
-    function assess(uint clientId, uint claimId) public view returns (bool assesment){
-        assesment = isPolicyValidOnClaimDate(clientId, claimId) && arePoliciesTheSame(clientId, claimId);
+    function assess(uint customerId, uint claimId) public view returns (bool assesment){
+        assesment = isPolicyValidOnClaimDate(customerId, claimId) && arePoliciesTheSame(customerId, claimId);
+    }
+
+    function receiveAClaim(uint customerId, insurancePolicy policyType) public view {
+        Claim memory claim;
+        claim.customerId = customerId;
+        claim.policyType = policyType;
+        claim.claimDate = block.timestamp;
     }
 }

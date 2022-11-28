@@ -4,7 +4,7 @@ pragma solidity ^0.8.4;
 contract InsurranceCompanyContract {
     enum insurancePolicy { ThirdParty, AllRisk }
 
-    struct Client {
+    struct Customer {
         uint id;
         string name;
         insurancePolicy policyType;
@@ -13,7 +13,7 @@ contract InsurranceCompanyContract {
 
     struct Claim {
         uint id;
-        uint clientId;
+        uint customerId;
         insurancePolicy policyType;
         bool assesment;
         uint claimDate;

@@ -41,11 +41,11 @@
 			]
 		},
 		"contracts/Client.sol": {
-			"keccak256": "0x8f96e4fc692fa891c08986d2969fd4a6abf9b8dd59e65ba511842278bbbadaf1",
+			"keccak256": "0x10a75084544ebc57c14c7f7ca5ebf0ee8b6eb686905c8d28e787f184cac65f04",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://83c717029c8f5f548a8afb60b9d79e2acc88a5b1b0c97ffc3e6310cda1991fa8",
-				"dweb:/ipfs/QmUrFD69jCMLmntuaqwKbGWCAphpV5GKyWCWNXC9kv2F8N"
+				"bzz-raw://e6cd43c18e47601197be93b0d30fbe2568999d8cd5a307c05817349c2d388c4a",
+				"dweb:/ipfs/QmTPmNZBtx3BRSWgEbecQnYvKp4sTB93oUEmpDZ7o72TjC"
 			]
 		},
 		"contracts/InsurranceCompany.sol": {
