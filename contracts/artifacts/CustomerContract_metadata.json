@@ -127,11 +127,11 @@
 	},
 	"sources": {
 		"contracts/Customer.sol": {
-			"keccak256": "0x7bd51c0e6256fadec0e78409240e27ae63f4206825cc526164b27490f4f96f02",
+			"keccak256": "0x4ddc98411bdba988a97aa9f8f28f79d022becc1a9d035e6597a7914bfae7ad1a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://998bee22a45dc939ced81d60ab4c5425fd56f8f5023d1efd9a901018c6ee842c",
-				"dweb:/ipfs/QmSe3Qno17KtZkfVsRyyt83d2WtjHwA9sZeoyXE5zewT7c"
+				"bzz-raw://553a1e1347355d3b939a029d1ee47bbb584f6835a7ee0cb54aa2ee2c4e867684",
+				"dweb:/ipfs/QmP8A4WgYruqygSGTE9SYfDzdzrcPyUTdXe1tfYkapE6Dz"
 			]
 		},
 		"contracts/InsurranceCompany.sol": {

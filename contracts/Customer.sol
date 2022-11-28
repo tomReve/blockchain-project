@@ -11,6 +11,7 @@ contract CustomerContract is InsurranceCompanyContract {
     }
 
     function addCustomer(string memory name, insurancePolicy policyType, uint validityInDays) public {
+        numCustomer++;
         customers.push(
             Customer(
                 numCustomer, 
@@ -19,11 +20,11 @@ contract CustomerContract is InsurranceCompanyContract {
                 block.timestamp + (validityInDays * 1 days)
             )
         );
-        numCustomer++;
     }
 
     function getCustomer(uint customerId) public view returns (Customer memory customer){
-        for (uint i = 0; i <= customers.length; i++){
+        // Si l'id retourné est égal à 0, on sait que l'utilisateur n'existe pas
+        for (uint i = 0; i < customers.length; i++){
             if(customers[i].id == customerId){
                 return customers[i];
             }
