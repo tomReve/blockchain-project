@@ -19,6 +19,14 @@ contract ClaimHandlingContract is InsurranceCompanyContract {
         numClaim++; 
     }
 
+    function receiveAClaim(uint customerId, insurancePolicy policyType) public {
+        Claim memory claim;
+        claim.customerId = customerId;
+        claim.policyType = policyType;
+        claim.claimDate = block.timestamp;
+        newClaim(claim);
+    }
+
     function getClaim(uint id) public view returns (Claim memory claim){
         claim = claims[id];
     }
@@ -37,12 +45,5 @@ contract ClaimHandlingContract is InsurranceCompanyContract {
 
     function assess(uint customerId, uint claimId) public view returns (bool assesment){
         assesment = isPolicyValidOnClaimDate(customerId, claimId) && arePoliciesTheSame(customerId, claimId);
-    }
-
-    function receiveAClaim(uint customerId, insurancePolicy policyType) public view {
-        Claim memory claim;
-        claim.customerId = customerId;
-        claim.policyType = policyType;
-        claim.claimDate = block.timestamp;
     }
 }

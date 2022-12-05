@@ -7,17 +7,18 @@ contract CustomerContract is InsurranceCompanyContract {
     Customer[] customers;
 
     constructor(){
-        addCustomer("Tom", insurancePolicy.AllRisk, 300);
+        addCustomer("Tom", insurancePolicy.AllRisk, 300, 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4);
     }
 
-    function addCustomer(string memory name, insurancePolicy policyType, uint validityInDays) public {
+    function addCustomer(string memory name, insurancePolicy policyType, uint validityInDays, address paymentAddress) public {
         numCustomer++;
         customers.push(
             Customer(
                 numCustomer, 
                 name, 
                 policyType, 
-                block.timestamp + (validityInDays * 1 days)
+                block.timestamp + (validityInDays * 1 days),
+                paymentAddress
             )
         );
     }

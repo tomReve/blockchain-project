@@ -1,0 +1,222 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_customerAddress",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_customerId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "PaymentToCustomer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getClaim",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "customerId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum InsurranceCompanyContract.insurancePolicy",
+								"name": "policyType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "assesment",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "claimDate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "damagePercentage",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct InsurranceCompanyContract.Claim",
+						"name": "claim",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "customerId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"name": "isPolicyValidOnClaimDate",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "policyValidity",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"name": "makeADecision",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "customerId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "makePayment",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "claimId",
+						"type": "uint256"
+					}
+				],
+				"name": "receiveAClaim",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ClaimProcessing.sol": "ClaimProcessingContract"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ClaimHandling.sol": {
+			"keccak256": "0x69f5c9390ba96683edd10851993316fd44b425f39d7803217dee3b09930dbb4e",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d54dc8d0e5a71bc756fd7752f02676560381ebc500b567e4b3c956f844060fba",
+				"dweb:/ipfs/QmaezaEaWFsKgY6svYtUK4Af1gJG7SP22QQR4q3dSvzLDn"
+			]
+		},
+		"contracts/ClaimProcessing.sol": {
+			"keccak256": "0x515ef4e3ef5410ede45501247287e103bf6a117db08db5c96c2e9516bbc2bd75",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://8bebff65422a45a452c26196796aa27ac424f2801fd5c8ac381e866bec80aa54",
+				"dweb:/ipfs/QmeUoB1ctAvSE3pZUczSFRoJ7scaEthmpF4xdZKr99ho2W"
+			]
+		},
+		"contracts/Customer.sol": {
+			"keccak256": "0x9d9f182a3ea8172f9d2103fd35f92b81dae26a8cb0498fbff0469a459a2ccba8",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://0cc01bc8231b481024cc7cb2046563cfc073763156131cd4c8419275ad8fa05e",
+				"dweb:/ipfs/QmXtFwELj9Xf5zgGSHCRY9Y6M4d2qVeLzGisq19xxqUsLm"
+			]
+		},
+		"contracts/Garage.sol": {
+			"keccak256": "0x39922e2d01da48c429655bfbee37e0ebb115e73c4d50700c28b90f67c24e6351",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://6f1f62b0ccec0b6179a312a5a15a3494424233ef58ff7aa9780defdfb5a5b036",
+				"dweb:/ipfs/QmR66EjqA2Bm9CLWunJ98f9PmLYJUzuCQym7qmn8pPky36"
+			]
+		},
+		"contracts/InsurranceCompany.sol": {
+			"keccak256": "0xa7c2dbedcc9051e059c982d307fbfcad592173f911c0284aed0bcabfadc63146",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://f857b97f4b0dc8d16796b5c08e60b1289942f691041a7dde4a0655492a700e55",
+				"dweb:/ipfs/QmaeooWfn5VEuRUS14Pdr5RLqPKjVyEpFgUwvvrnRJyN8M"
+			]
+		}
+	},
+	"version": 1
+}

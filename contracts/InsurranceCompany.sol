@@ -9,6 +9,7 @@ contract InsurranceCompanyContract {
         string name;
         insurancePolicy policyType;
         uint validityDate;
+        address paymentAddress;
     }
 
     struct Claim {

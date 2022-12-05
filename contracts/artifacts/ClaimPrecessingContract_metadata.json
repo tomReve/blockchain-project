@@ -4,7 +4,53 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "customerId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum InsurranceCompanyContract.insurancePolicy",
+								"name": "policyType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "assesment",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "claimDate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "damagePercentage",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct InsurranceCompanyContract.Claim",
+						"name": "claim",
+						"type": "tuple"
+					}
+				],
+				"name": "newClaim",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -32,28 +78,36 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/ClaimProcessing.sol": {
-			"keccak256": "0xb4d396fbf16aea0b9bb5f4352a36238d60997fcd80364274f4e72fc4f4d3fd0d",
+		"contracts/ClaimHandling.sol": {
+			"keccak256": "0x643a881d41e308299b57199d3617e5f0be1c80b849fbcc6f66c53bf71b76017e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1dff2cd68b5d5a7820345b47085a4d4f7f42b2f225c870fba2718c5aa20f9b5b",
-				"dweb:/ipfs/QmfEm1LAm7Kc4dR1RqFgdnrz3koiXVjXXvWoUZkTGCBLdT"
+				"bzz-raw://569d542423ac39897eb15f191449fbb6a84f192260921c4581f61e76e4e5bef1",
+				"dweb:/ipfs/QmZgbMyd45WEn367XBthDFh8BqdaJyBUB1Mk4PqWrNWrha"
 			]
 		},
-		"contracts/Client.sol": {
-			"keccak256": "0x10a75084544ebc57c14c7f7ca5ebf0ee8b6eb686905c8d28e787f184cac65f04",
+		"contracts/ClaimProcessing.sol": {
+			"keccak256": "0x50761400e4d3f99c54651c629320eac415c9b24d4bfef2f3cdee77c9b2ce437f",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://e6cd43c18e47601197be93b0d30fbe2568999d8cd5a307c05817349c2d388c4a",
-				"dweb:/ipfs/QmTPmNZBtx3BRSWgEbecQnYvKp4sTB93oUEmpDZ7o72TjC"
+				"bzz-raw://ed07e5697bf17f7ec2a5416e385be90893d4b81ed2b085136218159a142750cf",
+				"dweb:/ipfs/QmfFkgBtQ9uVWZEQm1jJvwpA86LNuoK3BhyqQW9C29YYhV"
+			]
+		},
+		"contracts/Customer.sol": {
+			"keccak256": "0x4ddc98411bdba988a97aa9f8f28f79d022becc1a9d035e6597a7914bfae7ad1a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://553a1e1347355d3b939a029d1ee47bbb584f6835a7ee0cb54aa2ee2c4e867684",
+				"dweb:/ipfs/QmP8A4WgYruqygSGTE9SYfDzdzrcPyUTdXe1tfYkapE6Dz"
 			]
 		},
 		"contracts/InsurranceCompany.sol": {
-			"keccak256": "0x7a9061eb6050c0a05455c06fe9e0ae86898122e83e2ae25ec81e024c58e75cd0",
+			"keccak256": "0xc0fa297533b36b188436ba0c7a4af93367d2d8c34361c267f46ca772bf5baff3",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://aa428465c7a88b5454ebd88c611738b5c3c26f7e898807958f69c5f36e2ef305",
-				"dweb:/ipfs/QmYe5se5c1krfdEzCYVSDy9mfXTseyTW82Y4GGrpRwjcBu"
+				"bzz-raw://1f5f00c1a642664dcde2143ba759795d8d45a71ea30d63116da92e9cb785045b",
+				"dweb:/ipfs/QmXKNvSXErWs7BAQzao2CbmbgzkxPuaw7jqPwjL8Vxpo9L"
 			]
 		}
 	},
