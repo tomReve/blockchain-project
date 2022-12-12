@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.4;
-import "./InsurranceCompany.sol";
+import "./InsuranceCompany.sol";
 
-contract CustomerContract is InsurranceCompanyContract {
+contract CustomerContract is InsuranceCompanyContract {
     uint numCustomer = 0;
     Customer[] customers;
 
@@ -32,10 +32,13 @@ contract CustomerContract is InsurranceCompanyContract {
         }
     }
 
-    function updateCustomerInformations(uint customerId, string memory newName) public returns (bool) {
+    function updateCustomerInformations(uint customerId, string memory newName, insurancePolicy newInsurancePolicy, uint newValidity, address newPaymentAddress) public returns (bool) {
         for(uint i = 0; i < customers.length; i++) {
             if(customers[i].id == customerId) {
                 customers[i].name = newName;
+                customers[i].policyType = newInsurancePolicy;
+                customers[i].validityDate = block.timestamp + (newValidity * 1 days);
+                customers[i].paymentAddress = newPaymentAddress;
                 return true;
             }
         }

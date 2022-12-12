@@ -6,6 +6,37 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_repairId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_claimId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "repairCost",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_notification",
+						"type": "string"
+					}
+				],
+				"name": "SendReceipt",
+				"type": "event"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -14,13 +45,7 @@
 					}
 				],
 				"name": "achieveRepairRequest",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -47,6 +72,52 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getRepair",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "claimId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "damage",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "cost",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isDone",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct InsuranceCompanyContract.Repair",
+						"name": "repair",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "claimId",
 						"type": "uint256"
 					},
@@ -65,30 +136,6 @@
 					}
 				],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "repairId",
-						"type": "uint256"
-					}
-				],
-				"name": "sendRepairReceipt",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -120,19 +167,19 @@
 	},
 	"sources": {
 		"contracts/Garage.sol": {
-			"keccak256": "0x39922e2d01da48c429655bfbee37e0ebb115e73c4d50700c28b90f67c24e6351",
+			"keccak256": "0x75f4825a41c9ac81f02511d5794ac91061091c8b42fad23cf9b69ee27fe10f0b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://6f1f62b0ccec0b6179a312a5a15a3494424233ef58ff7aa9780defdfb5a5b036",
-				"dweb:/ipfs/QmR66EjqA2Bm9CLWunJ98f9PmLYJUzuCQym7qmn8pPky36"
+				"bzz-raw://7f41ce9780e3d112bf83419c4ca8c638817438946bf9e0dd7d88f5a7df8f5c8c",
+				"dweb:/ipfs/QmYwX47Ks6NH2bo747fbktphscNNfsEYEvj4uRRHc7k6M4"
 			]
 		},
-		"contracts/InsurranceCompany.sol": {
-			"keccak256": "0xc0fa297533b36b188436ba0c7a4af93367d2d8c34361c267f46ca772bf5baff3",
+		"contracts/InsuranceCompany.sol": {
+			"keccak256": "0xa3a6cd7f4bc5f6edca537a20277757171a6d3155e4384cce47c00850f995ce98",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1f5f00c1a642664dcde2143ba759795d8d45a71ea30d63116da92e9cb785045b",
-				"dweb:/ipfs/QmXKNvSXErWs7BAQzao2CbmbgzkxPuaw7jqPwjL8Vxpo9L"
+				"bzz-raw://c0dab5fa8342ad8fa0013c255572ec9bec510dd9df5dd47cbe04c7e44d7a61ff",
+				"dweb:/ipfs/QmbYmntVBiAqVxCvviX3BtgbnrthL53zFThWG7C7Rwjvuv"
 			]
 		}
 	},

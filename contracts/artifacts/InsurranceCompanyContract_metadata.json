@@ -18,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/InsurranceCompany.sol": "InsurranceCompanyContract"
+			"contracts/InsuranceCompany.sol": "InsurranceCompanyContract"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -32,7 +32,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/InsurranceCompany.sol": {
+		"contracts/InsuranceCompany.sol": {
 			"keccak256": "0xa7c2dbedcc9051e059c982d307fbfcad592173f911c0284aed0bcabfadc63146",
 			"license": "GPL-3.0",
 			"urls": [

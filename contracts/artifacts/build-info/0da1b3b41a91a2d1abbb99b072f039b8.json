@@ -1,0 +1,833 @@
+{
+	"id": "0da1b3b41a91a2d1abbb99b072f039b8",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.7",
+	"solcLongVersion": "0.8.7+commit.e28d00a7",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/InsuranceCompany.sol": {
+				"content": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity ^0.8.4;\r\n\r\ncontract InsuranceCompanyContract {\r\n    enum insurancePolicy { ThirdParty, AllRisk }\r\n\r\n    struct Customer {\r\n        uint id;\r\n        string name;\r\n        insurancePolicy policyType;\r\n        uint validityDate;\r\n        address paymentAddress;\r\n    }\r\n\r\n    struct Claim {\r\n        uint id;\r\n        uint customerId;\r\n        insurancePolicy policyType;\r\n        bool assesment;\r\n        uint claimDate;\r\n        uint damagePercentage;\r\n    }\r\n\r\n    struct Repair {\r\n        uint id;\r\n        uint claimId;\r\n        uint damage;\r\n        uint cost;\r\n        bool isDone;\r\n    }\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"contracts": {
+			"contracts/InsuranceCompany.sol": {
+				"InsuranceCompanyContract": {
+					"abi": [],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"contracts/InsuranceCompany.sol\":64:649  contract InsuranceCompanyContract {\r... */\n  mstore(0x40, 0x80)\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  0x00\n  dup1\n  revert\ntag_1:\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"contracts/InsuranceCompany.sol\":64:649  contract InsuranceCompanyContract {\r... */\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa264697066735822122033f6b8d423ac54b4c71cd5ad4ab9890face67d6f4e50a717622398b45073d7e164736f6c63430008070033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122033f6b8d423ac54b4c71cd5ad4ab9890face67d6f4e50a717622398b45073d7e164736f6c63430008070033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CALLER 0xF6 0xB8 0xD4 0x23 0xAC SLOAD 0xB4 0xC7 SHR 0xD5 0xAD 0x4A 0xB9 DUP10 0xF 0xAC 0xE6 PUSH30 0x6F4E50A717622398B45073D7E164736F6C63430008070033000000000000 ",
+							"sourceMap": "64:585:0:-:0;;;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "6080604052600080fdfea264697066735822122033f6b8d423ac54b4c71cd5ad4ab9890face67d6f4e50a717622398b45073d7e164736f6c63430008070033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CALLER 0xF6 0xB8 0xD4 0x23 0xAC SLOAD 0xB4 0xC7 SHR 0xD5 0xAD 0x4A 0xB9 DUP10 0xF 0xAC 0xE6 PUSH30 0x6F4E50A717622398B45073D7E164736F6C63430008070033000000000000 ",
+							"sourceMap": "64:585:0:-:0;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "12600",
+								"executionCost": "66",
+								"totalCost": "12666"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "PUSH",
+									"source": 0,
+									"value": "80"
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "PUSH",
+									"source": 0,
+									"value": "40"
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "CALLVALUE",
+									"source": 0
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "ISZERO",
+									"source": 0
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "POP",
+									"source": 0
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 64,
+									"end": 649,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a264697066735822122033f6b8d423ac54b4c71cd5ad4ab9890face67d6f4e50a717622398b45073d7e164736f6c63430008070033",
+									".code": [
+										{
+											"begin": 64,
+											"end": 649,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 64,
+											"end": 649,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 64,
+											"end": 649,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 64,
+											"end": 649,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 64,
+											"end": 649,
+											"name": "DUP1",
+											"source": 0
+										},
+										{
+											"begin": 64,
+											"end": 649,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							}
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/InsuranceCompany.sol\":\"InsuranceCompanyContract\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/InsuranceCompany.sol\":{\"keccak256\":\"0xa3a6cd7f4bc5f6edca537a20277757171a6d3155e4384cce47c00850f995ce98\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://c0dab5fa8342ad8fa0013c255572ec9bec510dd9df5dd47cbe04c7e44d7a61ff\",\"dweb:/ipfs/QmbYmntVBiAqVxCvviX3BtgbnrthL53zFThWG7C7Rwjvuv\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"contracts/InsuranceCompany.sol": {
+				"ast": {
+					"absolutePath": "contracts/InsuranceCompany.sol",
+					"exportedSymbols": {
+						"InsuranceCompanyContract": [
+							42
+						]
+					},
+					"id": 43,
+					"license": "GPL-3.0",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".4"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "37:23:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "contract",
+							"fullyImplemented": true,
+							"id": 42,
+							"linearizedBaseContracts": [
+								42
+							],
+							"name": "InsuranceCompanyContract",
+							"nameLocation": "73:24:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"canonicalName": "InsuranceCompanyContract.insurancePolicy",
+									"id": 4,
+									"members": [
+										{
+											"id": 2,
+											"name": "ThirdParty",
+											"nameLocation": "128:10:0",
+											"nodeType": "EnumValue",
+											"src": "128:10:0"
+										},
+										{
+											"id": 3,
+											"name": "AllRisk",
+											"nameLocation": "140:7:0",
+											"nodeType": "EnumValue",
+											"src": "140:7:0"
+										}
+									],
+									"name": "insurancePolicy",
+									"nameLocation": "110:15:0",
+									"nodeType": "EnumDefinition",
+									"src": "105:44:0"
+								},
+								{
+									"canonicalName": "InsuranceCompanyContract.Customer",
+									"id": 16,
+									"members": [
+										{
+											"constant": false,
+											"id": 6,
+											"mutability": "mutable",
+											"name": "id",
+											"nameLocation": "189:2:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 16,
+											"src": "184:7:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 5,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "184:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 8,
+											"mutability": "mutable",
+											"name": "name",
+											"nameLocation": "209:4:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 16,
+											"src": "202:11:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_string_storage_ptr",
+												"typeString": "string"
+											},
+											"typeName": {
+												"id": 7,
+												"name": "string",
+												"nodeType": "ElementaryTypeName",
+												"src": "202:6:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_string_storage_ptr",
+													"typeString": "string"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 11,
+											"mutability": "mutable",
+											"name": "policyType",
+											"nameLocation": "240:10:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 16,
+											"src": "224:26:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_enum$_insurancePolicy_$4",
+												"typeString": "enum InsuranceCompanyContract.insurancePolicy"
+											},
+											"typeName": {
+												"id": 10,
+												"nodeType": "UserDefinedTypeName",
+												"pathNode": {
+													"id": 9,
+													"name": "insurancePolicy",
+													"nodeType": "IdentifierPath",
+													"referencedDeclaration": 4,
+													"src": "224:15:0"
+												},
+												"referencedDeclaration": 4,
+												"src": "224:15:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_enum$_insurancePolicy_$4",
+													"typeString": "enum InsuranceCompanyContract.insurancePolicy"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 13,
+											"mutability": "mutable",
+											"name": "validityDate",
+											"nameLocation": "266:12:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 16,
+											"src": "261:17:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 12,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "261:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 15,
+											"mutability": "mutable",
+											"name": "paymentAddress",
+											"nameLocation": "297:14:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 16,
+											"src": "289:22:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address",
+												"typeString": "address"
+											},
+											"typeName": {
+												"id": 14,
+												"name": "address",
+												"nodeType": "ElementaryTypeName",
+												"src": "289:7:0",
+												"stateMutability": "nonpayable",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												}
+											},
+											"visibility": "internal"
+										}
+									],
+									"name": "Customer",
+									"nameLocation": "164:8:0",
+									"nodeType": "StructDefinition",
+									"scope": 42,
+									"src": "157:162:0",
+									"visibility": "public"
+								},
+								{
+									"canonicalName": "InsuranceCompanyContract.Claim",
+									"id": 30,
+									"members": [
+										{
+											"constant": false,
+											"id": 18,
+											"mutability": "mutable",
+											"name": "id",
+											"nameLocation": "356:2:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 30,
+											"src": "351:7:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 17,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "351:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 20,
+											"mutability": "mutable",
+											"name": "customerId",
+											"nameLocation": "374:10:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 30,
+											"src": "369:15:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 19,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "369:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 23,
+											"mutability": "mutable",
+											"name": "policyType",
+											"nameLocation": "411:10:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 30,
+											"src": "395:26:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_enum$_insurancePolicy_$4",
+												"typeString": "enum InsuranceCompanyContract.insurancePolicy"
+											},
+											"typeName": {
+												"id": 22,
+												"nodeType": "UserDefinedTypeName",
+												"pathNode": {
+													"id": 21,
+													"name": "insurancePolicy",
+													"nodeType": "IdentifierPath",
+													"referencedDeclaration": 4,
+													"src": "395:15:0"
+												},
+												"referencedDeclaration": 4,
+												"src": "395:15:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_enum$_insurancePolicy_$4",
+													"typeString": "enum InsuranceCompanyContract.insurancePolicy"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 25,
+											"mutability": "mutable",
+											"name": "assesment",
+											"nameLocation": "437:9:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 30,
+											"src": "432:14:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_bool",
+												"typeString": "bool"
+											},
+											"typeName": {
+												"id": 24,
+												"name": "bool",
+												"nodeType": "ElementaryTypeName",
+												"src": "432:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 27,
+											"mutability": "mutable",
+											"name": "claimDate",
+											"nameLocation": "462:9:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 30,
+											"src": "457:14:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 26,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "457:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 29,
+											"mutability": "mutable",
+											"name": "damagePercentage",
+											"nameLocation": "487:16:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 30,
+											"src": "482:21:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 28,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "482:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										}
+									],
+									"name": "Claim",
+									"nameLocation": "334:5:0",
+									"nodeType": "StructDefinition",
+									"scope": 42,
+									"src": "327:184:0",
+									"visibility": "public"
+								},
+								{
+									"canonicalName": "InsuranceCompanyContract.Repair",
+									"id": 41,
+									"members": [
+										{
+											"constant": false,
+											"id": 32,
+											"mutability": "mutable",
+											"name": "id",
+											"nameLocation": "549:2:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 41,
+											"src": "544:7:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 31,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "544:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 34,
+											"mutability": "mutable",
+											"name": "claimId",
+											"nameLocation": "567:7:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 41,
+											"src": "562:12:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 33,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "562:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 36,
+											"mutability": "mutable",
+											"name": "damage",
+											"nameLocation": "590:6:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 41,
+											"src": "585:11:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 35,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "585:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 38,
+											"mutability": "mutable",
+											"name": "cost",
+											"nameLocation": "612:4:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 41,
+											"src": "607:9:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 37,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "607:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 40,
+											"mutability": "mutable",
+											"name": "isDone",
+											"nameLocation": "632:6:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 41,
+											"src": "627:11:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_bool",
+												"typeString": "bool"
+											},
+											"typeName": {
+												"id": 39,
+												"name": "bool",
+												"nodeType": "ElementaryTypeName",
+												"src": "627:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												}
+											},
+											"visibility": "internal"
+										}
+									],
+									"name": "Repair",
+									"nameLocation": "526:6:0",
+									"nodeType": "StructDefinition",
+									"scope": 42,
+									"src": "519:127:0",
+									"visibility": "public"
+								}
+							],
+							"scope": 43,
+							"src": "64:585:0",
+							"usedErrors": []
+						}
+					],
+					"src": "37:612:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

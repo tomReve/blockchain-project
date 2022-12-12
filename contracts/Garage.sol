@@ -1,10 +1,12 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.4;
-import "./InsurranceCompany.sol";
+import "./InsuranceCompany.sol";
 
-contract GarageContract is InsurranceCompanyContract{
+contract GarageContract is InsuranceCompanyContract {
     uint numRepair;
     mapping (uint => Repair) repairs;
+
+    event SendReceipt(uint indexed _repairId, uint indexed _claimId, uint repairCost, string _notification);
 
     function receiveRepairRequest(uint claimId, uint damage) public returns (uint repairId){
         repairId = numRepair++; 
@@ -14,6 +16,10 @@ contract GarageContract is InsurranceCompanyContract{
         repairStorage.damage = damage;
         repairStorage.cost = 0;
         repairStorage.isDone = false;
+    }
+
+    function getRepair(uint id) public view returns (Repair memory repair){
+        repair = repairs[id];
     }
 
     function estimateCost(uint damagePercentage) public pure returns (uint){
@@ -28,16 +34,12 @@ contract GarageContract is InsurranceCompanyContract{
         }
     }
 
-    function achieveRepairRequest(uint repairId) public returns (bool){
+    function achieveRepairRequest(uint repairId) public {
         uint repairCost = estimateCost(repairs[repairId].damage);
         if(repairCost > 0){
             repairs[repairId].isDone = true;
+            emit SendReceipt(repairId, getRepair(repairId).claimId, repairCost, "The repair has been done. Please proceed to payment.");
         }
-
-        return repairs[repairId].isDone;
-    }
-
-    function sendRepairReceipt(uint repairId) external view returns (uint, uint){
-        return (repairs[repairId].claimId, repairs[repairId].cost);
+        emit SendReceipt(repairId, getRepair(repairId).claimId, repairCost, "No reparations needed.");
     }
 }
