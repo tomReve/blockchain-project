@@ -1,5 +1,5 @@
 {
-	"id": "0da1b3b41a91a2d1abbb99b072f039b8",
+	"id": "f0786188815a8bf15a13c07ed45bf97e",
 	"_format": "hh-sol-build-info-1",
 	"solcVersion": "0.8.7",
 	"solcLongVersion": "0.8.7+commit.e28d00a7",
@@ -7,7 +7,7 @@
 		"language": "Solidity",
 		"sources": {
 			"contracts/InsuranceCompany.sol": {
-				"content": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity ^0.8.4;\r\n\r\ncontract InsuranceCompanyContract {\r\n    enum insurancePolicy { ThirdParty, AllRisk }\r\n\r\n    struct Customer {\r\n        uint id;\r\n        string name;\r\n        insurancePolicy policyType;\r\n        uint validityDate;\r\n        address paymentAddress;\r\n    }\r\n\r\n    struct Claim {\r\n        uint id;\r\n        uint customerId;\r\n        insurancePolicy policyType;\r\n        bool assesment;\r\n        uint claimDate;\r\n        uint damagePercentage;\r\n    }\r\n\r\n    struct Repair {\r\n        uint id;\r\n        uint claimId;\r\n        uint damage;\r\n        uint cost;\r\n        bool isDone;\r\n    }\r\n}"
+				"content": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity ^0.8.4;\r\n\r\ncontract InsuranceCompanyContract {\r\n    enum insurancePolicy { ThirdParty, AllRisk }\r\n\r\n    struct Customer {\r\n        uint id;\r\n        string name;\r\n        insurancePolicy policyType;\r\n        uint validityDate;\r\n        address paymentAddress;\r\n    }\r\n\r\n    struct Claim {\r\n        uint id;\r\n        uint customerId;\r\n        insurancePolicy policyType;\r\n        uint claimDate;\r\n        uint damagePercentage;\r\n    }\r\n\r\n    struct Repair {\r\n        uint id;\r\n        uint claimId;\r\n        uint damage;\r\n        uint cost;\r\n        bool isDone;\r\n    }\r\n}"
 			}
 		},
 		"settings": {
@@ -48,23 +48,23 @@
 						"version": 1
 					},
 					"evm": {
-						"assembly": "    /* \"contracts/InsuranceCompany.sol\":64:649  contract InsuranceCompanyContract {\r... */\n  mstore(0x40, 0x80)\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  0x00\n  dup1\n  revert\ntag_1:\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"contracts/InsuranceCompany.sol\":64:649  contract InsuranceCompanyContract {\r... */\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa264697066735822122033f6b8d423ac54b4c71cd5ad4ab9890face67d6f4e50a717622398b45073d7e164736f6c63430008070033\n}\n",
+						"assembly": "    /* \"contracts/InsuranceCompany.sol\":64:624  contract InsuranceCompanyContract {\r... */\n  mstore(0x40, 0x80)\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  0x00\n  dup1\n  revert\ntag_1:\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"contracts/InsuranceCompany.sol\":64:624  contract InsuranceCompanyContract {\r... */\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa26469706673582212203fa07bea4043a3bd5e6274a69835edb2047ec767711244dfeb31b5ac141eefb564736f6c63430008070033\n}\n",
 						"bytecode": {
 							"functionDebugData": {},
 							"generatedSources": [],
 							"linkReferences": {},
-							"object": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122033f6b8d423ac54b4c71cd5ad4ab9890face67d6f4e50a717622398b45073d7e164736f6c63430008070033",
-							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CALLER 0xF6 0xB8 0xD4 0x23 0xAC SLOAD 0xB4 0xC7 SHR 0xD5 0xAD 0x4A 0xB9 DUP10 0xF 0xAC 0xE6 PUSH30 0x6F4E50A717622398B45073D7E164736F6C63430008070033000000000000 ",
-							"sourceMap": "64:585:0:-:0;;;;;;;;;;;;;;;;;;;"
+							"object": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212203fa07bea4043a3bd5e6274a69835edb2047ec767711244dfeb31b5ac141eefb564736f6c63430008070033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 EXTCODEHASH LOG0 PUSH28 0xEA4043A3BD5E6274A69835EDB2047EC767711244DFEB31B5AC141EEF 0xB5 PUSH5 0x736F6C6343 STOP ADDMOD SMOD STOP CALLER ",
+							"sourceMap": "64:560:0:-:0;;;;;;;;;;;;;;;;;;;"
 						},
 						"deployedBytecode": {
 							"functionDebugData": {},
 							"generatedSources": [],
 							"immutableReferences": {},
 							"linkReferences": {},
-							"object": "6080604052600080fdfea264697066735822122033f6b8d423ac54b4c71cd5ad4ab9890face67d6f4e50a717622398b45073d7e164736f6c63430008070033",
-							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CALLER 0xF6 0xB8 0xD4 0x23 0xAC SLOAD 0xB4 0xC7 SHR 0xD5 0xAD 0x4A 0xB9 DUP10 0xF 0xAC 0xE6 PUSH30 0x6F4E50A717622398B45073D7E164736F6C63430008070033000000000000 ",
-							"sourceMap": "64:585:0:-:0;;;;;"
+							"object": "6080604052600080fdfea26469706673582212203fa07bea4043a3bd5e6274a69835edb2047ec767711244dfeb31b5ac141eefb564736f6c63430008070033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 EXTCODEHASH LOG0 PUSH28 0xEA4043A3BD5E6274A69835EDB2047EC767711244DFEB31B5AC141EEF 0xB5 PUSH5 0x736F6C6343 STOP ADDMOD SMOD STOP CALLER ",
+							"sourceMap": "64:560:0:-:0;;;;;"
 						},
 						"gasEstimates": {
 							"creation": {
@@ -77,180 +77,180 @@
 							".code": [
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "PUSH",
 									"source": 0,
 									"value": "80"
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "PUSH",
 									"source": 0,
 									"value": "40"
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "MSTORE",
 									"source": 0
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "CALLVALUE",
 									"source": 0
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "DUP1",
 									"source": 0
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "ISZERO",
 									"source": 0
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "PUSH [tag]",
 									"source": 0,
 									"value": "1"
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "JUMPI",
 									"source": 0
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "DUP1",
 									"source": 0
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "REVERT",
 									"source": 0
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "tag",
 									"source": 0,
 									"value": "1"
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "JUMPDEST",
 									"source": 0
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "POP",
 									"source": 0
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "PUSH #[$]",
 									"source": 0,
 									"value": "0000000000000000000000000000000000000000000000000000000000000000"
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "DUP1",
 									"source": 0
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "PUSH [$]",
 									"source": 0,
 									"value": "0000000000000000000000000000000000000000000000000000000000000000"
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "CODECOPY",
 									"source": 0
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 64,
-									"end": 649,
+									"end": 624,
 									"name": "RETURN",
 									"source": 0
 								}
 							],
 							".data": {
 								"0": {
-									".auxdata": "a264697066735822122033f6b8d423ac54b4c71cd5ad4ab9890face67d6f4e50a717622398b45073d7e164736f6c63430008070033",
+									".auxdata": "a26469706673582212203fa07bea4043a3bd5e6274a69835edb2047ec767711244dfeb31b5ac141eefb564736f6c63430008070033",
 									".code": [
 										{
 											"begin": 64,
-											"end": 649,
+											"end": 624,
 											"name": "PUSH",
 											"source": 0,
 											"value": "80"
 										},
 										{
 											"begin": 64,
-											"end": 649,
+											"end": 624,
 											"name": "PUSH",
 											"source": 0,
 											"value": "40"
 										},
 										{
 											"begin": 64,
-											"end": 649,
+											"end": 624,
 											"name": "MSTORE",
 											"source": 0
 										},
 										{
 											"begin": 64,
-											"end": 649,
+											"end": 624,
 											"name": "PUSH",
 											"source": 0,
 											"value": "0"
 										},
 										{
 											"begin": 64,
-											"end": 649,
+											"end": 624,
 											"name": "DUP1",
 											"source": 0
 										},
 										{
 											"begin": 64,
-											"end": 649,
+											"end": 624,
 											"name": "REVERT",
 											"source": 0
 										}
@@ -260,7 +260,7 @@
 						},
 						"methodIdentifiers": {}
 					},
-					"metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/InsuranceCompany.sol\":\"InsuranceCompanyContract\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/InsuranceCompany.sol\":{\"keccak256\":\"0xa3a6cd7f4bc5f6edca537a20277757171a6d3155e4384cce47c00850f995ce98\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://c0dab5fa8342ad8fa0013c255572ec9bec510dd9df5dd47cbe04c7e44d7a61ff\",\"dweb:/ipfs/QmbYmntVBiAqVxCvviX3BtgbnrthL53zFThWG7C7Rwjvuv\"]}},\"version\":1}",
+					"metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/InsuranceCompany.sol\":\"InsuranceCompanyContract\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/InsuranceCompany.sol\":{\"keccak256\":\"0x0dd7c00bdf85b807b7ed401f24d2d4efdf227d4622174d9438653230ad5ac14b\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://a259de5dd00db9f668248ba3df9112f5a9ee23d41d368b6368e80e138e1feb03\",\"dweb:/ipfs/QmcoZzz7XTeK9GbtxkPRYjvZ97jn4HoLhEywzMsLVhPuJe\"]}},\"version\":1}",
 					"storageLayout": {
 						"storage": [],
 						"types": null
@@ -279,10 +279,10 @@
 					"absolutePath": "contracts/InsuranceCompany.sol",
 					"exportedSymbols": {
 						"InsuranceCompanyContract": [
-							42
+							40
 						]
 					},
-					"id": 43,
+					"id": 41,
 					"license": "GPL-3.0",
 					"nodeType": "SourceUnit",
 					"nodes": [
@@ -303,9 +303,9 @@
 							"contractDependencies": [],
 							"contractKind": "contract",
 							"fullyImplemented": true,
-							"id": 42,
+							"id": 40,
 							"linearizedBaseContracts": [
-								42
+								40
 							],
 							"name": "InsuranceCompanyContract",
 							"nameLocation": "73:24:0",
@@ -486,13 +486,13 @@
 									"name": "Customer",
 									"nameLocation": "164:8:0",
 									"nodeType": "StructDefinition",
-									"scope": 42,
+									"scope": 40,
 									"src": "157:162:0",
 									"visibility": "public"
 								},
 								{
 									"canonicalName": "InsuranceCompanyContract.Claim",
-									"id": 30,
+									"id": 28,
 									"members": [
 										{
 											"constant": false,
@@ -501,7 +501,7 @@
 											"name": "id",
 											"nameLocation": "356:2:0",
 											"nodeType": "VariableDeclaration",
-											"scope": 30,
+											"scope": 28,
 											"src": "351:7:0",
 											"stateVariable": false,
 											"storageLocation": "default",
@@ -528,7 +528,7 @@
 											"name": "customerId",
 											"nameLocation": "374:10:0",
 											"nodeType": "VariableDeclaration",
-											"scope": 30,
+											"scope": 28,
 											"src": "369:15:0",
 											"stateVariable": false,
 											"storageLocation": "default",
@@ -555,7 +555,7 @@
 											"name": "policyType",
 											"nameLocation": "411:10:0",
 											"nodeType": "VariableDeclaration",
-											"scope": 30,
+											"scope": 28,
 											"src": "395:26:0",
 											"stateVariable": false,
 											"storageLocation": "default",
@@ -586,25 +586,25 @@
 											"constant": false,
 											"id": 25,
 											"mutability": "mutable",
-											"name": "assesment",
+											"name": "claimDate",
 											"nameLocation": "437:9:0",
 											"nodeType": "VariableDeclaration",
-											"scope": 30,
+											"scope": 28,
 											"src": "432:14:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
-												"typeIdentifier": "t_bool",
-												"typeString": "bool"
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
 											},
 											"typeName": {
 												"id": 24,
-												"name": "bool",
+												"name": "uint",
 												"nodeType": "ElementaryTypeName",
 												"src": "432:4:0",
 												"typeDescriptions": {
-													"typeIdentifier": "t_bool",
-													"typeString": "bool"
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
 												}
 											},
 											"visibility": "internal"
@@ -613,11 +613,11 @@
 											"constant": false,
 											"id": 27,
 											"mutability": "mutable",
-											"name": "claimDate",
-											"nameLocation": "462:9:0",
+											"name": "damagePercentage",
+											"nameLocation": "462:16:0",
 											"nodeType": "VariableDeclaration",
-											"scope": 30,
-											"src": "457:14:0",
+											"scope": 28,
+											"src": "457:21:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -635,16 +635,28 @@
 												}
 											},
 											"visibility": "internal"
-										},
+										}
+									],
+									"name": "Claim",
+									"nameLocation": "334:5:0",
+									"nodeType": "StructDefinition",
+									"scope": 40,
+									"src": "327:159:0",
+									"visibility": "public"
+								},
+								{
+									"canonicalName": "InsuranceCompanyContract.Repair",
+									"id": 39,
+									"members": [
 										{
 											"constant": false,
-											"id": 29,
+											"id": 30,
 											"mutability": "mutable",
-											"name": "damagePercentage",
-											"nameLocation": "487:16:0",
+											"name": "id",
+											"nameLocation": "524:2:0",
 											"nodeType": "VariableDeclaration",
-											"scope": 30,
-											"src": "482:21:0",
+											"scope": 39,
+											"src": "519:7:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -652,38 +664,26 @@
 												"typeString": "uint256"
 											},
 											"typeName": {
-												"id": 28,
+												"id": 29,
 												"name": "uint",
 												"nodeType": "ElementaryTypeName",
-												"src": "482:4:0",
+												"src": "519:4:0",
 												"typeDescriptions": {
 													"typeIdentifier": "t_uint256",
 													"typeString": "uint256"
 												}
 											},
 											"visibility": "internal"
-										}
-									],
-									"name": "Claim",
-									"nameLocation": "334:5:0",
-									"nodeType": "StructDefinition",
-									"scope": 42,
-									"src": "327:184:0",
-									"visibility": "public"
-								},
-								{
-									"canonicalName": "InsuranceCompanyContract.Repair",
-									"id": 41,
-									"members": [
+										},
 										{
 											"constant": false,
 											"id": 32,
 											"mutability": "mutable",
-											"name": "id",
-											"nameLocation": "549:2:0",
+											"name": "claimId",
+											"nameLocation": "542:7:0",
 											"nodeType": "VariableDeclaration",
-											"scope": 41,
-											"src": "544:7:0",
+											"scope": 39,
+											"src": "537:12:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -694,7 +694,7 @@
 												"id": 31,
 												"name": "uint",
 												"nodeType": "ElementaryTypeName",
-												"src": "544:4:0",
+												"src": "537:4:0",
 												"typeDescriptions": {
 													"typeIdentifier": "t_uint256",
 													"typeString": "uint256"
@@ -706,11 +706,11 @@
 											"constant": false,
 											"id": 34,
 											"mutability": "mutable",
-											"name": "claimId",
-											"nameLocation": "567:7:0",
+											"name": "damage",
+											"nameLocation": "565:6:0",
 											"nodeType": "VariableDeclaration",
-											"scope": 41,
-											"src": "562:12:0",
+											"scope": 39,
+											"src": "560:11:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -721,7 +721,7 @@
 												"id": 33,
 												"name": "uint",
 												"nodeType": "ElementaryTypeName",
-												"src": "562:4:0",
+												"src": "560:4:0",
 												"typeDescriptions": {
 													"typeIdentifier": "t_uint256",
 													"typeString": "uint256"
@@ -733,11 +733,11 @@
 											"constant": false,
 											"id": 36,
 											"mutability": "mutable",
-											"name": "damage",
-											"nameLocation": "590:6:0",
+											"name": "cost",
+											"nameLocation": "587:4:0",
 											"nodeType": "VariableDeclaration",
-											"scope": 41,
-											"src": "585:11:0",
+											"scope": 39,
+											"src": "582:9:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -748,7 +748,7 @@
 												"id": 35,
 												"name": "uint",
 												"nodeType": "ElementaryTypeName",
-												"src": "585:4:0",
+												"src": "582:4:0",
 												"typeDescriptions": {
 													"typeIdentifier": "t_uint256",
 													"typeString": "uint256"
@@ -760,38 +760,11 @@
 											"constant": false,
 											"id": 38,
 											"mutability": "mutable",
-											"name": "cost",
-											"nameLocation": "612:4:0",
-											"nodeType": "VariableDeclaration",
-											"scope": 41,
-											"src": "607:9:0",
-											"stateVariable": false,
-											"storageLocation": "default",
-											"typeDescriptions": {
-												"typeIdentifier": "t_uint256",
-												"typeString": "uint256"
-											},
-											"typeName": {
-												"id": 37,
-												"name": "uint",
-												"nodeType": "ElementaryTypeName",
-												"src": "607:4:0",
-												"typeDescriptions": {
-													"typeIdentifier": "t_uint256",
-													"typeString": "uint256"
-												}
-											},
-											"visibility": "internal"
-										},
-										{
-											"constant": false,
-											"id": 40,
-											"mutability": "mutable",
 											"name": "isDone",
-											"nameLocation": "632:6:0",
+											"nameLocation": "607:6:0",
 											"nodeType": "VariableDeclaration",
-											"scope": 41,
-											"src": "627:11:0",
+											"scope": 39,
+											"src": "602:11:0",
 											"stateVariable": false,
 											"storageLocation": "default",
 											"typeDescriptions": {
@@ -799,10 +772,10 @@
 												"typeString": "bool"
 											},
 											"typeName": {
-												"id": 39,
+												"id": 37,
 												"name": "bool",
 												"nodeType": "ElementaryTypeName",
-												"src": "627:4:0",
+												"src": "602:4:0",
 												"typeDescriptions": {
 													"typeIdentifier": "t_bool",
 													"typeString": "bool"
@@ -812,19 +785,19 @@
 										}
 									],
 									"name": "Repair",
-									"nameLocation": "526:6:0",
+									"nameLocation": "501:6:0",
 									"nodeType": "StructDefinition",
-									"scope": 42,
-									"src": "519:127:0",
+									"scope": 40,
+									"src": "494:127:0",
 									"visibility": "public"
 								}
 							],
-							"scope": 43,
-							"src": "64:585:0",
+							"scope": 41,
+							"src": "64:560:0",
 							"usedErrors": []
 						}
 					],
-					"src": "37:612:0"
+					"src": "37:587:0"
 				},
 				"id": 0
 			}

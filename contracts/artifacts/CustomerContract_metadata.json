@@ -152,19 +152,19 @@
 	},
 	"sources": {
 		"contracts/Customer.sol": {
-			"keccak256": "0x16bb1b2da39c7c0500470ce89280aa2c083aa9436005e57a31f21d584437072f",
+			"keccak256": "0x1f27def4b9f8d35d56b6d5442db31e573d710ffc73d232b67147c11cbdaf74b4",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://41e0eeb869ad016abef4b78f9040b11ccbcade57a41f2c6c18c0f6539f396cb9",
-				"dweb:/ipfs/Qmbv5EBzvShT48aFAAEDKEmU25QbQ7czEGQTi9jHareXqj"
+				"bzz-raw://99c560ec1cd72eaeb39d24df05dd0d0ad9c6554f1cfc2ca9e28f1d802b730104",
+				"dweb:/ipfs/QmRW7xHHNkqsbMrDmgFkKgNKx1hqrNCGD1ozwwYMtNJNwo"
 			]
 		},
 		"contracts/InsuranceCompany.sol": {
-			"keccak256": "0xa3a6cd7f4bc5f6edca537a20277757171a6d3155e4384cce47c00850f995ce98",
+			"keccak256": "0x0dd7c00bdf85b807b7ed401f24d2d4efdf227d4622174d9438653230ad5ac14b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c0dab5fa8342ad8fa0013c255572ec9bec510dd9df5dd47cbe04c7e44d7a61ff",
-				"dweb:/ipfs/QmbYmntVBiAqVxCvviX3BtgbnrthL53zFThWG7C7Rwjvuv"
+				"bzz-raw://a259de5dd00db9f668248ba3df9112f5a9ee23d41d368b6368e80e138e1feb03",
+				"dweb:/ipfs/QmcoZzz7XTeK9GbtxkPRYjvZ97jn4HoLhEywzMsLVhPuJe"
 			]
 		}
 	},

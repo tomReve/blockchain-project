@@ -3,9 +3,9 @@ pragma solidity ^0.8.4;
 import "./InsuranceCompany.sol";
 
 contract CustomerContract is InsuranceCompanyContract {
-    uint numCustomer = 0;
+    uint numCustomer;
     Customer[] customers;
-
+    
     constructor(){
         addCustomer("Tom", insurancePolicy.AllRisk, 300, 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4);
     }

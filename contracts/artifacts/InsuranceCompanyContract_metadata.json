@@ -33,11 +33,11 @@
 	},
 	"sources": {
 		"contracts/InsuranceCompany.sol": {
-			"keccak256": "0xa3a6cd7f4bc5f6edca537a20277757171a6d3155e4384cce47c00850f995ce98",
+			"keccak256": "0x0dd7c00bdf85b807b7ed401f24d2d4efdf227d4622174d9438653230ad5ac14b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c0dab5fa8342ad8fa0013c255572ec9bec510dd9df5dd47cbe04c7e44d7a61ff",
-				"dweb:/ipfs/QmbYmntVBiAqVxCvviX3BtgbnrthL53zFThWG7C7Rwjvuv"
+				"bzz-raw://a259de5dd00db9f668248ba3df9112f5a9ee23d41d368b6368e80e138e1feb03",
+				"dweb:/ipfs/QmcoZzz7XTeK9GbtxkPRYjvZ97jn4HoLhEywzMsLVhPuJe"
 			]
 		}
 	},

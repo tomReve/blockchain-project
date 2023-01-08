@@ -16,7 +16,6 @@ contract InsuranceCompanyContract {
         uint id;
         uint customerId;
         insurancePolicy policyType;
-        bool assesment;
         uint claimDate;
         uint damagePercentage;
     }

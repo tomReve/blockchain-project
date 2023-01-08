@@ -5,35 +5,38 @@ import "./Customer.sol";
 
 contract ClaimHandlingContract is InsuranceCompanyContract {
 
-    CustomerContract customerContract = new CustomerContract();
+    CustomerContract customerContract;
 
     uint numClaim = 0;
-    mapping (uint => Claim) claims;
+    Claim[] claims;
 
     event CustomerAdvNotif(uint indexed _customerId, string _notification);
 
-    function newClaim(Claim memory claim) public {
-        Claim storage c = claims[numClaim];
-        c.id = numClaim;
-        c.customerId = claim.customerId;
-        c.policyType = claim.policyType;
-        c.claimDate = claim.claimDate;
-        c.damagePercentage = claim.damagePercentage;
-        numClaim++; 
+    constructor(address customerContractAddress) {
+        customerContract = CustomerContract(customerContractAddress);
     }
 
     function receiveAClaim(uint customerId, insurancePolicy policyType, uint damagePercentage) public checkIdentity(customerId)
             isPolicyValidOnClaimDate(customerId,  block.timestamp) arePoliciesTheSame(customerId, policyType){
-        Claim memory claim;
-        claim.customerId = customerId;
-        claim.policyType = policyType;
-        claim.claimDate = block.timestamp;
-        claim.damagePercentage = damagePercentage;
-        newClaim(claim);
+        numClaim++;
+        claims.push(
+            Claim(
+                numClaim, 
+                customerId, 
+                policyType,
+                block.timestamp, 
+                damagePercentage
+            )
+        );
     }
 
     function getClaim(uint id) public view returns (Claim memory claim){
-        claim = claims[id];
+        // Si l'id retourné est égal à 0, on sait que la claim n'existe pas
+        for (uint i = 0; i < claims.length; i++){
+            if(claims[i].id == id){
+                return claims[i];
+            }
+        }
     }
 
     modifier checkIdentity(uint customerId) {

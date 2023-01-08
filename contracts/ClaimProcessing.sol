@@ -7,27 +7,43 @@ import "./Garage.sol";
 
 contract ClaimProcessingContract is InsuranceCompanyContract {
 
-    CustomerContract customerContract = new CustomerContract();
-    ClaimHandlingContract claimHandlingContract = new ClaimHandlingContract();
-    GarageContract garageContract = new GarageContract();
+    CustomerContract customerContract;
+    ClaimHandlingContract claimHandlingContract;
+    GarageContract garageContract;
 
-    mapping (uint => Claim) claims;
+    constructor(address customerContractAddress, address claimHandlingContractAdress, address garageContractAddress) {
+        customerContract = CustomerContract(customerContractAddress);
+        claimHandlingContract = ClaimHandlingContract(claimHandlingContractAdress);
+        garageContract = GarageContract(garageContractAddress);
+    }
+
+    uint numClaim = 0;
+    Claim[] claims;
 
     event PaymentToCustomerNotif(address indexed _customerAddress, uint indexed _customerId, uint _value);
     event CustomerAdvNotif(uint indexed _customerId, uint indexed _claimId, string _notification);
 
-    function receiveAClaim(uint claimId) public {
+    function receiveAClaim(uint claimId) public{
         Claim memory claim = claimHandlingContract.getClaim(claimId);
-        Claim storage c = claims[claimId];
-        c.id = claimId;
-        c.customerId = claim.customerId;
-        c.policyType = claim.policyType;
-        c.claimDate = claim.claimDate;
-        c.damagePercentage = claim.damagePercentage;
+        numClaim++;
+        claims.push(
+            Claim(
+                claimId, 
+                claim.customerId, 
+                claim.policyType,
+                claim.claimDate, 
+                claim.damagePercentage
+            )
+        );
     }
 
     function getClaim(uint id) public view returns (Claim memory claim){
-        claim = claims[id];
+        // Si l'id retourné est égal à 0, on sait que la claim n'existe pas
+        for (uint i = 0; i < claims.length; i++){
+            if(claims[i].id == id){
+                return claims[i];
+            }
+        }
     }
 
     modifier isPolicyValidOnClaimDate(uint customerId, uint claimId){

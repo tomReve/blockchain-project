@@ -4,22 +4,30 @@ import "./InsuranceCompany.sol";
 
 contract GarageContract is InsuranceCompanyContract {
     uint numRepair;
-    mapping (uint => Repair) repairs;
+    Repair[] repairs;
 
     event SendReceipt(uint indexed _repairId, uint indexed _claimId, uint repairCost, string _notification);
 
-    function receiveRepairRequest(uint claimId, uint damage) public returns (uint repairId){
-        repairId = numRepair++; 
-        Repair storage repairStorage = repairs[repairId];
-        repairStorage.id = repairId;
-        repairStorage.claimId = claimId;
-        repairStorage.damage = damage;
-        repairStorage.cost = 0;
-        repairStorage.isDone = false;
+    function receiveRepairRequest(uint claimId, uint damage) public {
+        numRepair++;
+        repairs.push(
+            Repair(
+                numRepair, 
+                claimId, 
+                damage, 
+                0,
+                false
+            )
+        );
     }
 
     function getRepair(uint id) public view returns (Repair memory repair){
-        repair = repairs[id];
+        // Si l'id retourné est égal à 0, on sait que la réparation n'existe pas
+        for (uint i = 0; i < repairs.length; i++){
+            if(repairs[i].id == id){
+                return repairs[i];
+            }
+        }
     }
 
     function estimateCost(uint damagePercentage) public pure returns (uint){
@@ -35,7 +43,7 @@ contract GarageContract is InsuranceCompanyContract {
     }
 
     function achieveRepairRequest(uint repairId) public {
-        uint repairCost = estimateCost(repairs[repairId].damage);
+        uint repairCost = estimateCost(getRepair(repairId).damage);
         if(repairCost > 0){
             repairs[repairId].isDone = true;
             emit SendReceipt(repairId, getRepair(repairId).claimId, repairCost, "The repair has been done. Please proceed to payment.");
